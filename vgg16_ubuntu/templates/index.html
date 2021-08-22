@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Hello Jinja2</title>
+  </head>
+  <body>
+    <h1>{{title}}</h1>
+    <p>{{ message }}</p>
+	<form action="/text" method="POST" enctype="multipart/form-data">
+		<div>
+			<label for="name">検索ワード：</label>
+			<input type="text" id="name" name="name" placeholder="検索ワード">	
+		</div>
+		<div>
+			<input type="submit" value="検索">
+		</div>
+		{% if image != 'empty' %}
+			<div>
+				<img src="{{url_for('static', filename=image)}}" alt="xxx" title="xxx">
+			</div>
+		{% endif %}
+	</form>
+  </body>
+</html>
